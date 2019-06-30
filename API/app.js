@@ -6,6 +6,9 @@ const POI_M = require('./POI_module');
 const Users_POI_M = require('./Users_POI_module');
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+var cors = require('cors');
+app.use(cors());
+app.options('*',cors());
 
 // Users
 app.post("/registerUser", (req, res) => {Users_M.registerUser(req, res)});
